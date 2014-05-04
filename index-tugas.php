@@ -33,6 +33,34 @@ foreach ($judul as $jdl) {
 	}
 ?>
 </td>
+<td width=270>
+<img src="http://www.sehat.info/wp-content/uploads/2013/02/vitamin-dari-sinar-matahari-260x125.jpg">
+<h4>
+<?php
+libxml_use_internal_errors(true);
+libxml_clear_errors();
+$dom = new DomDocument;
+$dom->loadHTMLFile("http://www.sehat.info/");
+$xpath = new DomXPath($dom);
+$judul = $xpath->query("/html/body/div[2]/div[2]/div/section/div[2]/ul/li/h2/a");
+foreach ($judul as $jdl) {
+	echo $jdl->nodeValue;
+	}
+?>
+</h4>
+<?php
+libxml_use_internal_errors(true);
+libxml_clear_errors();
+$dom = new DomDocument;
+$dom->loadHTMLFile("http://www.sehat.info/");
+$xpath = new DomXPath($dom);
+$judul = $xpath->query("/html/body/div[2]/div[2]/div/section/div[2]/ul/li/div[2]");
+foreach ($judul as $jdl) {
+	echo $jdl->nodeValue;
+	echo "<br/>";
+	}
+?>
+</td>
 </tr>
 </table>
 </body>
