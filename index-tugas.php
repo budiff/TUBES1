@@ -2,26 +2,38 @@
 <head></head>
 <title></title>
 <body bg background = http://2.bp.blogspot.com/-gj9pSpbm3xw/T8A9dGx1S7I/AAAAAAAABH4/A_IBVlpQpGc/s000/body-bg.png >
-<table bgcolor="white" width=800 align=center border=1>
+<table bgcolor="white" align=center border=0>
 <tr>
-<td>
+<td width=800><h2 align="center">
 <?php
 libxml_use_internal_errors(true);
 libxml_clear_errors();
 $dom = new DomDocument;
-$dom->loadHTMLFile("http://www.beritateknologi.com/tentang/handphone/");
+$dom->loadHTMLFile("http://www.republika.co.id/berita/regional/jawa-tengah-diy/12/02/22/lzskzn-warga-diimbau-waspadai-perkembangan-gunung-merapi");
 $xpath = new DomXPath($dom);
-$judul = $xpath->query("/html/body/div/div/div[5]/div/div/div/div/div/div/div[2]/div/div/div/a/img");
+$judul = $xpath->query("/html/body/div[5]/div/div/div[2]/h1");
 foreach ($judul as $jdl) {
 	echo $jdl->nodeValue;
-	echo "<img src=$jdl->nodeValue>";
 	echo "<br/>";
 	}
-///html/body/div/div/div[5]/div/div/div/div/div/div/div[4]/div/div/div[2]
-//body bg background = http://2.bp.blogspot.com/-gj9pSpbm3xw/T8A9dGx1S7I/AAAAAAAABH4/A_IBVlpQpGc/s000/body-bg.png >
+?>
+</h2>
+<br/>
+<img src="http://static.republika.co.id/uploads/images/detailnews/tanaman_di_lereng_gunung_merapi_101217182625.jpg">
+<?php
+libxml_use_internal_errors(true);
+libxml_clear_errors();
+$dom = new DomDocument;
+$dom->loadHTMLFile("http://www.republika.co.id/berita/regional/jawa-tengah-diy/12/02/22/lzskzn-warga-diimbau-waspadai-perkembangan-gunung-merapi");
+$xpath = new DomXPath($dom);
+$judul = $xpath->query("/html/body/div[5]/div/div/div[2]/div[6]/p");
+foreach ($judul as $jdl) {
+	echo $jdl->nodeValue;
+	echo "<br/>";
+	}
 ?>
 </td>
 </tr>
-/table>
+</table>
 </body>
 </html>
