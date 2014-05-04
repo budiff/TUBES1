@@ -60,6 +60,34 @@ foreach ($judul as $jdl) {
 	echo "<br/>";
 	}
 ?>
+<br/><br/><h4>
+<?php
+libxml_use_internal_errors(true);
+libxml_clear_errors();
+$dom = new DomDocument;
+$dom->loadHTMLFile("http://www.infogadget.biz/");
+$xpath = new DomXPath($dom);
+$judul = $xpath->query("/html/body/div[3]/div[3]/div[2]/div[5]/div[2]/h2/a");
+foreach ($judul as $jdl) {
+	echo $jdl->nodeValue;
+	echo "<br/>";
+	}
+?>
+</h4>
+<img src="http://www.infogadget.biz/wp-content/uploads/2014/02/Huawei-Ascend-G6.jpg">
+<br/>
+<?php
+libxml_use_internal_errors(true);
+libxml_clear_errors();
+$dom = new DomDocument;
+$dom->loadHTMLFile("http://www.infogadget.biz/");
+$xpath = new DomXPath($dom);
+$judul = $xpath->query("/html/body/div[3]/div[3]/div[2]/div[5]/p");
+foreach ($judul as $jdl) {
+	echo $jdl->nodeValue;
+	echo "<br/>";
+	}
+?>
 </td>
 </tr>
 </table>
